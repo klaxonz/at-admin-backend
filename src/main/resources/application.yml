@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/attendance?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: zwj359869
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    druid:
+      initial-size: 5
+      max-wait: 6000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-return: false
+      test-on-borrow: false
+swagger:
+  base-path: /**
+  base-package: 'com.mobby.attendance.controller'
+  title: 'Attendance project api swagger'
+  description: 'All api list in here.'
+  version: '1.0'
+server:
+  port: 8080
